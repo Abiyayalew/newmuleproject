@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="3f883f08-cbe0-4a0a-a0c5-912aefa8c5bf" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="newmuleprojectFlow" doc:id="7c59050c-1c71-4a83-acb4-e4ff6c865d36" >
+		<http:listener doc:name="Listener" doc:id="69c6573d-e49a-4a78-a8a0-4aa8cefc7c21" config-ref="HTTP_Listener_config" path="/test"/>
+		<set-payload value="welcome to mule4" doc:name="Set Payload" doc:id="98550241-c1f7-403e-829f-82928f45ac6c" />
+	</flow>
+</mule>
